@@ -1,0 +1,7 @@
+@startuml
+
+start
+:user write a disease;
+:system show all animals being not vaccinated vor this disease;
+
+@enduml

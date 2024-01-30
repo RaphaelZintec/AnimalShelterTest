@@ -317,4 +317,10 @@ class AnimalShelter1Test {
                 Arguments.of(new Dog(), 347, "Animal , isClean=false, age=3, name='Noel', animalNumber=123}\r\n"+"Animal , isClean=false, age=3, name='Mitzi', animalNumber=345}\r\n" +"Animal , isClean=false, age=11, name='Kimmy', animalNumber=213}\r\n" +"Animal , isClean=false, age=0, name='DEFAULT_ANIMAL_NAME', animalNumber=346}\r\n") //test with empty constructor
         );
     }
+
+
+
+
+
+
 }

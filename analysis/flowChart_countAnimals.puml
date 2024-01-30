@@ -1,0 +1,8 @@
+@startuml
+
+start
+:user call method;
+:method count all animals;
+:method return number of all animals in the shelter;
+
+@enduml

@@ -1,0 +1,18 @@
+@startuml
+
+start
+:user choose the method to find the animal;
+if(find animal by name) then (yes)
+    :system search animal by name;
+    :return animal object;
+    end;
+else (no)
+    if(find animal by number) then (yes)
+        :system search animal by ID;
+        :return animal object;
+        end;
+    else (no)
+        :error can only search by name or ID;
+        end;
+
+@enduml
