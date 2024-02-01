@@ -1,0 +1,13 @@
+@startuml
+
+start
+:user asks to see all animals having the name Bob;
+:system search all animals with that name;
+if(are there any animals found) then (yes)
+    :system show the result;
+    end;
+else (no)
+    :error msg there are no animals with that name;
+    stop;
+
+@enduml

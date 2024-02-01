@@ -1,0 +1,14 @@
+@startuml
+
+start
+:user asks to see all animals sorted by name;
+:system search all animals in the shelter;
+if(are there any animals found) then (yes)
+    :system sort found animals by name;
+    :system shows the result;
+    end;
+else (no)
+    :error msg there are no animals in the shelter;
+    stop;
+
+@enduml

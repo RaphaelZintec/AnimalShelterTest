@@ -1,0 +1,19 @@
+@startuml
+
+User -> AnimalShelterApp : provides the animal ID
+AnimalShelterApp -> AnimalService : treatAnimal(int: ID)
+
+alt Animal found
+AnimalService -> AnimalRepository : getAnimal(int: ID)
+AnimalService <- AnimalRepository : return Animal animal
+AnimalService --> AnimalService : clean(Animal animal)
+AnimalService --> AnimalService : vaccinate(Animal animal)
+AnimalShelterApp <-- AnimalService : void()
+User <-- AnimalShelterApp : success msg: animal is clean
+else Animal not found
+AnimalService <- AnimalRepository : return null
+AnimalShelterApp <- AnimalService : AnimalNotFoundException
+User <-- AnimalShelterApp : error msg: animal not found
+end
+
+@enduml

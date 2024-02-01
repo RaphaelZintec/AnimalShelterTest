@@ -1,0 +1,16 @@
+@startuml
+
+User -> AnimalShelterApp : requests to see all animals
+AnimalShelterApp -> AnimalService : printAllAnimals()
+alt At least one animal in the shelter
+AnimalService -> AnimalRepository : getAnimals()
+AnimalService <- AnimalRepository : List<Animal>
+AnimalShelterApp <-- AnimalService : printEachAnimal(List<Animal> list)
+User <-- AnimalShelterApp : show all animals found in the shelter
+else No animal in the shelter
+AnimalService <- AnimalRepository : return null
+AnimalShelterApp <-- AnimalService : NoAnimalFoundException
+User <-- AnimalShelterApp : error msg: no animal in the shelter
+end
+
+@enduml

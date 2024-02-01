@@ -1,0 +1,22 @@
+@startuml
+
+/'
+start
+:user provides the animal;
+if(is animal already in shelter) then (yes)
+    :error message;
+    stop;
+else (no)
+    :set ID to animal;
+    :add animal to shelter;
+    end;
+'/
+
+/'This is exactly how the actual method works'/
+start
+:the user provides an animal (dog, cat or monkey);
+:the system add the provided animal in the shelter;
+:the system set the correct ID for the animal;
+:the system prepares a new ID for the next future animal;
+end;
+@enduml

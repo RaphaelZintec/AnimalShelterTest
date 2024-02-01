@@ -1,0 +1,22 @@
+@startuml
+
+User -> AnimalShelterApp : inputs NAME or ID
+alt NAME
+AnimalShelterApp -> AnimalService : findAnimal(String: name)
+AnimalService -> AnimalRepository : getAnimal(String: name)
+else ID
+AnimalShelterApp -> AnimalService : findAnimal(int: id)
+AnimalService -> AnimalRepository : getAnimal(int: id)
+end
+
+alt Animal found
+AnimalService <- AnimalRepository : return Animal animal
+AnimalShelterApp <-- AnimalService : printAnimal(Animal animal)
+User <-- AnimalShelterApp : show found animal
+else Animal not found
+AnimalService <- AnimalRepository : return null
+AnimalShelterApp <-- AnimalService : AnimalNotFoundException
+User <-- AnimalShelterApp : error msg: animal not found
+end
+
+@enduml

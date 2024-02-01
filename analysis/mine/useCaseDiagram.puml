@@ -1,0 +1,22 @@
+@startuml
+left to right direction
+
+actor user
+actor admin
+
+package Functionalities {
+  usecase "Show all animals: printAnimals()" as UC1
+  usecase "Sort animals by ID: sortAnimals()" as UC2
+  usecase "Sort animals by NAME: sortAnimalsByName()" as UC3
+  usecase "Sort animals by AGE: sortAnimalsByAge()" as UC4
+  usecase "Show animals not being vaccinated for one disease: printAnimalsNotVaccinated()" as UC5
+  usecase "Find an animal by AGE or NAME: findAnimal()" as UC6
+}
+
+user --> UC1
+user --> UC2
+user --> UC3
+user --> UC4
+user --> UC5
+user --> UC6
+@enduml

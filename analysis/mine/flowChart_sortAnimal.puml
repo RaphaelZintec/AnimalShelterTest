@@ -14,6 +14,6 @@ else (no)
         end;
     else (no)
         :error can only sort by age or name;
-        end;
+        stop;
 
 @enduml

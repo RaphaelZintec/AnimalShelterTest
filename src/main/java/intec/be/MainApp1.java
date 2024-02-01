@@ -93,5 +93,7 @@ public class MainApp1 {
         System.out.println("14-counting animals **********************************************************");
         System.out.println(animalShelter1.countAnimals());
 
+
+
     }
 }
