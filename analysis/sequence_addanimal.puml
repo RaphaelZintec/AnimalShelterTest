@@ -4,8 +4,8 @@ User -> AnimalShelterApp : provides an animal
 AnimalShelterApp -> AnimalService : addAnimal(Animal animal)
 
 alt Animal not in the shelter
-AnimalService -> AnimalShelterApp : set ID to animal
-AnimalService -> AnimalShelterApp : add animal in the shelter
+AnimalService -> AnimalService : set ID to animal
+AnimalService -> AnimalService : add animal in the shelter
 AnimalService -> AnimalShelterApp : return true
 User <-- AnimalShelterApp : success msg: animal added
 

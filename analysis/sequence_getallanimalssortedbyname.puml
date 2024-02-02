@@ -1,15 +1,15 @@
 @startuml
 
 User -> AnimalShelterApp : requests to see all animals sorted by NAME
-AnimalShelterApp -> AnimalService : printAllAnimals()
-alt At least one animal in the shelter
+AnimalShelterApp -> AnimalService : getAllAnimalsSortedByName()
 AnimalService -> AnimalRepository : getAnimals()
+alt At least one animal in the shelter
 AnimalService <- AnimalRepository : List<Animal>
-AnimalShelterApp <-- AnimalService : sortAnimals(SortType name)
-AnimalShelterApp <-- AnimalService : printEachAnimal(List<Animal> list)
-User <-- AnimalShelterApp : show result
+AnimalService  --> AnimalService : sortAnimals(SortType name)
+AnimalService  --> AnimalShelterApp : void()
+User <-- AnimalShelterApp : show animals sorted by name
 else No animal in the shelter
-AnimalService <- AnimalRepository : return null
+AnimalService <- AnimalRepository : return empty list
 AnimalShelterApp <-- AnimalService : NoAnimalFoundException
 User <-- AnimalShelterApp : error msg: no animal in the shelter
 end

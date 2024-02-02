@@ -11,8 +11,8 @@ end
 
 alt Animal found
 AnimalService <- AnimalRepository : return Animal animal
-AnimalShelterApp <-- AnimalService : printAnimal(Animal animal)
-User <-- AnimalShelterApp : show found animal
+AnimalShelterApp <-- AnimalService : void()
+User <-- AnimalShelterApp : show the found animal
 else Animal not found
 AnimalService <- AnimalRepository : return null
 AnimalShelterApp <-- AnimalService : AnimalNotFoundException

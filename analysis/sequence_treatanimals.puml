@@ -2,9 +2,9 @@
 
 User -> AnimalShelterApp : provides the animal ID
 AnimalShelterApp -> AnimalService : treatAnimal(int: ID)
+AnimalService -> AnimalRepository : getAnimal(int: ID)
 
 alt Animal found
-AnimalService -> AnimalRepository : getAnimal(int: ID)
 AnimalService <- AnimalRepository : return Animal animal
 AnimalService --> AnimalService : clean(Animal animal)
 AnimalService --> AnimalService : vaccinate(Animal animal)
